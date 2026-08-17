@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            min-height: 100vh;
+        }
+
+        .user-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all .4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+        }
+
+        .user-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+        }
+
+        .avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .blue {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .green {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .purple {
+            background: linear-gradient(135deg, #a855f7, #7e22ce);
+        }
+
+        .orange {
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+        }
+
+        .red {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+
+        .card-body h4 {
+            font-weight: 700;
+        }
+
+        .course {
+            font-weight: 600;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row g-4">
+
+            <% data.forEach((user,index) => { %>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card user-card">
+
+                        <div class="card-body d-flex align-items-center gap-3">
+
+                            <div class="avatar
+                            <%= index % 5 === 0 ? 'blue'
+                            : index % 5 === 1 ? 'green'
+                            : index % 5 === 2 ? 'purple'
+                            : index % 5 === 3 ? 'orange'
+                            : 'red' %>">
+
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+
+                            <div>
+                                <h4>
+                                    <%= user.name %>
+                                </h4>
+                                <p class="mb-1"><strong>ID:</strong>
+                                    <%= user.id %>
+                                </p>
+                                <p class="mb-0">
+                                    <strong>Course:</strong>
+                                    <span class="course">
+                                        <%= user.course %>
+                                    </span>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <% }) %>
+
+        </div>
+    </div>
+
+    <a href="/">Home</a>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
+

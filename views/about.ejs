@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+
+        body {
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            min-height: 100vh;
+        }
+        
+        .user-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all .4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+        }
+
+        .user-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="d-flex justify-content-center" style="color: forestgreen;">About Page</h2>
+    <h3 class="d-flex justify-content-center" style="color: firebrick;">User List</h3>
+
+    <div class="container py-5">
+        <div class="row g-4">
+
+            <% users.forEach((user)=> { %>
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="card user-card">
+                        <div class="card-body align-items-center gap-3">
+                            <div>
+                                <h4>
+                                    <strong style="color: rgb(36, 164, 164);">Name:</strong>
+                                    <%= user.name %>
+                                </h4>
+                                <h5><strong style="color: rgb(170, 111, 14);">Email:</strong>
+                                    <%= user.email %>
+                                </h5>
+                                <h5><strong style="color: rgb(170, 111, 14);">Username:</strong>
+                                    <%= user.username %>
+                                </h5>
+                                <h5><strong style="color: rgb(170, 111, 14);">Phone:</strong>
+                                    <%= user.phone %>
+                                </h5>
+                                <h5><strong style="color: rgb(170, 111, 14);">Website:</strong>
+                                    <%= user.website %>
+                                </h5>
+                                <h5><strong style="color: rgb(170, 111, 14);">Company:</strong>
+                                    <%= user.company.name %>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <% }) %>
+
+        </div>
+    </div>
+
+    <a href="/">Home</a>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+        </script>
+
+</body>
+
+</html>

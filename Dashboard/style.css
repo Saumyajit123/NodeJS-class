@@ -1,0 +1,149 @@
+body {
+  background: #f8fafc;
+}
+
+/* Header Section */
+/* .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+} */
+
+.navbar-brand {
+  width: 100px;
+}
+
+.navbar-brand > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none !important;
+}
+
+.collapse {
+  text-align: center !important;
+}
+
+.nav-link {
+  font-size: 18px;
+  color: black;
+  cursor: pointer;
+}
+
+.dropdown-item {
+  font-size: 20px;
+}
+
+.btn-primary {
+  width: fit-content;
+  background-color: green;
+  border-radius: 15px;
+  padding: 10px;
+  --bs-navbar-toggler-focus-width: 0;
+  font-size: 18px;
+  color: white;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0rem !important;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #1e293b;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  padding: 25px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #14b8a6;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 25px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #334155;
+  color: #14b8a6;
+  border-left: 4px solid #14b8a6;
+}
+
+.main-content {
+  margin-left: 250px;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.destination-card {
+  transition: 0.5s linear all;
+
+}
+
+.destination-card:hover {
+  transform: scale(1.1);
+}
+
+.destination-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* 
+============================
+Media Queries 
+============================
+*/
+
+@media screen and (max-width: 992px) {
+  .btn-primary {
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nav-link,
+  .btn-primary {
+    font-size: 16px;
+  }
+}
